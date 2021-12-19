@@ -1,0 +1,38 @@
+# WEEK O3_ C093077 jimin kim
+## 1. What is Gamma? 
+click [here](https://www.cambridgeincolour.com/tutorials/gamma-correction.htm) [reference_Gamma]
+
+<u>**The relationship between a pixel's numerical value and its actual luminance.**</u>
+
+- It's also referred to as **gamma correction, gamma encoding or gamma compression**
+
+### 1.1. Why Gamma is used?
+	- translating between our eye's light sensitivity and that of the camera. When a digital image is saved, it's therefore "gamma encoded"
+	- the gamma encoded gradient distributes the tones roughly evenly across the entire range ("perceptually uniform").
+ 
+ ### 1.2. Linear-Workflow
+ 
+<img width="605" alt="Screen Shot 2021-10-01 at 8 09 00 AM" src="https://user-images.githubusercontent.com/90587432/135541396-9281c7ff-115c-4b43-bac0-292ac1e01b23.png">
+        
+- **Image Gamma** :  making the most efficient use of a given bit depth. (ex)jpeg file)
+- **Display Gamma**: the image isn't unrealistically brightened on our screen.( A higher display gamma results in a darker image with greater contrast.)
+- **System Gamma**: A straight line makes that the input (the original scene) is the same as the output (the light displayed on screen or in a print).
+---
+## 2. What is the ACES(The Academy Color Encoding System)?
+click [here](https://www.premiumbeat.com/blog/what-is-aces-in-color-grading/) [reference_ACES]
+
+**the industry standard for managing color throughout the life cycle of a motion picture or television production.**
+
+- includes everything the human eye can see, meaning there are no restrictions or limitations of the color space.
+- <u>To reign in all the various formats and codecs.</u>
+
+---
+
+## 3. What is Premultiplication?
+click [here](https://limnu.com/premultiplied-alpha-primer-artists/) [reference_Premultiplication]
+
+**An alpha channel** is an <u>image mask</u> that controls the visibility of a layer. 
+Usually **white** means <u>opaque</u> and **black** means <u>transparent.</u> 
+
+<img width="704" alt="Screen Shot 2021-10-01 at 9 06 49 AM" src="https://user-images.githubusercontent.com/90587432/135546453-ea059fdf-d353-49c7-b296-8996e515333d.png">
+
