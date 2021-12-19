@@ -1,0 +1,129 @@
+# WEEK O4_ C093077 jimin kim
+## What is Merge Operation? 
+click [here](https://learn.foundry.com/nuke/13.0/content/comp_environment/merging/merge_operations.html) [reference_merge operation]
+
+<u>**different compositing algorithms**</u>
+
+    : This is a method of creating a new pixel value that is output as a merged image by calculating the pixel value of one input as the pixel value of another input.
+
+*A, B = input image , a,b = alpha area of an image*
+
+### 1. atop
+- **Ab+B(1-a)** : **(= merge)** 
+- here,  A is premultiplied image
+
+### 2. average
+- **(A+B)/2**
+- darker than the origianl images.
+
+### 3. color-burn
+- **darken B towards A**
+
+### 4. color-dodge
+- **brighten B towards A**
+
+### 5. conjoint-over
+- **A+B(1-a/b), A if a>b**
+-  A completely hides B.
+
+### 6. copy
+ - **A**
+ - Only shows image A
+
+### 7. difference
+- **abs(A-B)**
+- Useful for comparing two very similar images.
+
+### 8. disjoint-over
+- **A+B(1-a)/b, A+B if a+b<1**
+-  if you want to merge element a over element b, and element a has element b already held out.
+-  using the over operation would produce dark lines around the comped objects. This is meaning the background is held out twice.
+
+### 9. divide
+- **A/B, 0 if A<0 and B<0**
+- This does not match any photographic operation, but can be used to undo a multiply.
+
+### 10. exclusion
+- **A+B-2AB**
+
+### 11. from
+- **B-A**
+- Image A is subtracted from B
+
+### 12. geometric
+- **2AB/(A+B)**
+- Another way of averaging two images
+
+### 13. hard-light
+- **multiply if A<0.5, screen if A>0.5**
+- Image B is lit up by a very bright and sharp light in the shape of image A.
+
+### 14. hypot
+- **sqrt(AA+BB)**
+- This is useful for adding reflections, as an alternative to screen.
+- The result is not as bright as plus, but brighter than screen.
+
+### 15. in
+- **Ab**
+- Only shows the areas of image A that overlap with the alpha of B.
+
+### 16. mask
+- **Ba**
+- This is the reverse of the in operation.
+- Only shows the areas of image B that overlap with the alpha of A.
+
+### 17. matte
+- **Aa+B(1-a)**
+- Premultiplied over. Use unpremultiplied images with this operation.
+
+### 18. max
+- **max (A,B)**
+- Takes the maximum values of both images.
+
+### 19. min
+- **min (A,B)**
+- Takes the minimum values of both images.
+
+### 20. minus
+- **A-B**
+- Image B is subtracted from A.
+
+### 21. multiply
+- **AB, A if A<0 and B<0**
+- Multiplies the values but stops two negative values from becoming a positive number.
+
+### 22. out
+- **A(1-b)**
+- Only shows the areas of image A that do not overlap with the alpha of B.
+
+### 23. overlay
+- **multiply if B<0.5, screen if B>0.5**
+- Image A brightens image B.
+
+### 24. plus
+- **A+B**
+- The sum of image A and B.
+-  it may result in pixel values higher than 1.0.
+-  Useful for compositing laser beams, but you’re better off not using this one for combining mattes.
+
+### 25. screen
+- **A or B ≤1? A+B-AB: max(A,B)**
+- If A or B is less than or equal to 1 the screen else use the maximum example, resembles Plus.
+
+### 26. soft-light
+- **B(2A+(B(1-AB))) if AB<1, 2AB otherwise**
+- Image B gets lit up.
+
+### 27. stencil
+- **B(1-a)**
+- This is the reverse of the out operation.
+- Only shows the areas of image B that do not overlap with the alpha of A.
+
+### 28. under
+- **A(1-b)+B**
+- This is the reverse of the over operation.
+- Layers image B over A according to the matte of image B.
+
+### 30. xor
+- **A(1-b)+B(1-a)**
+- Shows both image A and B where the images do not overlap.
