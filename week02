@@ -1,0 +1,32 @@
+# WEEK O2_ C093077 jimin kim
+## 1. What Is Color?
+### 1.1. RGB : additive color mixture
+click [here](https://www.rapidtables.com/web/color/RGB_Color.html) [reference_RGB]
+-  RGB consist of **Red, Green, Blue**
+- their combination makes all the colors
+  
+  *Mixing all red (R), green (G), and blue (B) results in white. And if don't mix all of the three colors, it's expressed in black.* 
+  
+ ### 1.2. CMYK: Subtractive mixture
+ 
+ click [here](https://whatis.techtarget.com/definition/CMYK-cyan-magenta-yellow-key) [reference_CMYK]
+ - CMYK consit of **Cyan, Magenta, Yellow**
+ - K is **Key**, That is **Black**
+  
+   *The more CMYK is mixed, the lower the brightness and saturation, and finally black.*
+
+<u>In general, RGB mode should be used to prepare graphics mainly for viewing on computer displays. CMYK mode should be used to create pictures of print media. This is because RGB is a light-based color implementation principle and CMYK is an ink-based color implementation principle.</u>
+
+### 1.3. Alpha channel
+click [here](http://asktimgrey.com/2017/11/27/what-is-an-alpha-channel/) [reference_alpha]
+- **Alpha channel** is used to define areas of a photo, such as to define **transparency** or to preserve a saved selection.
+
+   *where **white pixels** on the alpha channel represent pixels that are fully selected, **black pixels** represent pixels that are fully deselected, and pixels with a shade of gray represent areas that are partially selected.*
+---
+## 2. What is the Colorspace?
+click [here](https://learn.foundry.com/course/5708/view/colorspace-in-mari-preserving-your-colors-from-brush-to-screen?fbclid=IwAR1g9KhyHJg3IB2qluD6AIgegpXGnW_6zIyO-N1FfmS_v-1EvGphs67n-88) [reference_colorspace]
+
+- **Colorspaces**: Why Colors Change Across Devices
+
+  *due to technological limitations our monitors can’t reproduce the full colorspace of human vision. Instead, they cover **only part of the map**, supporting a subset of colors and luminances.*
+  
