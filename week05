@@ -1,0 +1,47 @@
+# WEEK O5_ C093077 jimin kim
+## 1. What is Croma Key? 
+click [here](https://www.premiumbeat.com/blog/chroma-key-green-screen-guide/) [reference_croma key]
+
+### 1.1. Green Screen
+-  the colored background to make transparent and remove from shot.
+-  bright green because it is the color furthest away from human skin tones.
+
+### 1.2. Keying
+- the process of removing the green screen background in post-production
+- When the green screen background has been keyed, it will be fully transparent. 
+
+****
+
+## 2. What is Keyer in nuke?
+
+click [here](https://learn.foundry.com/nuke/content/reference_guide/keyer_nodes/keyer.html) [reference_keyer]
+
+<u>**making alpha channel like green screen**</u>
+
+
+### 2.1. Hue Keyer
+- It calculates hue from the incoming RGB channels
+- It uses the amount curve to determine the value to output in the alpha channel.
+
+### 2.2. Difference
+- This node produces the difference between two images
+- Creating two Framehold nodes and connecting them to sub-nodes makes it easier to distinguish between the alpha values of the two nodes.
+
+### 2.3. Key Light
+- it is color difference keyer.
+- select a part of the green screen, and then the value is automatically adjusted to create an alpha channel.
+- Adjust the screen black clip black or clip white to get the details.
+- Set the screen gain to 1 (more weight on alpha channel extraction), and then create a copy node to copy only the alpha channel to adjust the changed color.
+
+### 2.4. Prematte
+click [here](https://learn.foundry.com/nuke/content/comp_environment/keying_with_primatte/how_primatte_works.html) [reference]
+
+- Primatte segments all the colors in the foreground image into one of four separate categories
+- A single pixel may be selected or a range of pixels
+-  Select clean bg (background), fg (picking object), noise (ctrl press and drag) in Operation to capture the details of the alpha channel.
+
+### 2.5. Ultimatte
+click [here](https://learn.foundry.com/nuke/content/reference_guide/keyer_nodes/ultimatte.html)[reference]
+- it is a color difference keyer.
+- a composite that preserves fine details like hair, smoke, and motion blurred edges with a minimum of compromises.
+
